@@ -251,7 +251,7 @@ For manual install instructions see the README in the `rules/` folder. When copy
 /plugin list everything-claude-code@everything-claude-code
 ```
 
-**That's it!** You now have access to 48 agents, 183 skills, and 79 legacy command shims.
+✨ **That's it!** You now have access to 28 agents, 116 skills, and 59 commands.
 
 ### Dashboard GUI
 
@@ -343,7 +343,7 @@ everything-claude-code/
 |   |-- plugin.json         # Plugin metadata and component paths
 |   |-- marketplace.json    # Marketplace catalog for /plugin marketplace add
 |
-|-- agents/           # 36 specialized subagents for delegation
+|-- agents/           # 28 specialized subagents for delegation
 |   |-- planner.md           # Feature implementation planning
 |   |-- architect.md         # System design decisions
 |   |-- tdd-guide.md         # Test-driven development
@@ -1217,13 +1217,13 @@ The configuration is automatically detected from `.opencode/opencode.json`.
 
 | Feature | Claude Code | OpenCode | Status |
 |---------|-------------|----------|--------|
-| Agents | PASS: 48 agents | PASS: 12 agents | **Claude Code leads** |
-| Commands | PASS: 79 commands | PASS: 31 commands | **Claude Code leads** |
-| Skills | PASS: 183 skills | PASS: 37 skills | **Claude Code leads** |
-| Hooks | PASS: 8 event types | PASS: 11 events | **OpenCode has more!** |
-| Rules | PASS: 29 rules | PASS: 13 instructions | **Claude Code leads** |
-| MCP Servers | PASS: 14 servers | PASS: Full | **Full parity** |
-| Custom Tools | PASS: Via hooks | PASS: 6 native tools | **OpenCode is better** |
+| Agents | ✅ 28 agents | ✅ 12 agents | **Claude Code leads** |
+| Commands | ✅ 59 commands | ✅ 31 commands | **Claude Code leads** |
+| Skills | ✅ 116 skills | ✅ 37 skills | **Claude Code leads** |
+| Hooks | ✅ 8 event types | ✅ 11 events | **OpenCode has more!** |
+| Rules | ✅ 29 rules | ✅ 13 instructions | **Claude Code leads** |
+| MCP Servers | ✅ 14 servers | ✅ Full | **Full parity** |
+| Custom Tools | ✅ Via hooks | ✅ 6 native tools | **OpenCode is better** |
 
 ### Hook Support via Plugins
 
