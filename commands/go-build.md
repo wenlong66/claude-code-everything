@@ -140,7 +140,7 @@ ok      project/internal/handler   0.023s
 | Files modified | 2 |
 | Remaining issues | 0 |
 
-Build Status: PASS: SUCCESS
+Build Status: ✅ SUCCESS
 ```
 
 ## Common Errors Fixed

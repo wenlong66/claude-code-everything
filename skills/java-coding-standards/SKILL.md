@@ -26,22 +26,22 @@ Standards for readable, maintainable Java (17+) code in Spring Boot services.
 ## Naming
 
 ```java
-// PASS: Classes/Records: PascalCase
+// ✅ Classes/Records: PascalCase
 public class MarketService {}
 public record Money(BigDecimal amount, Currency currency) {}
 
-// PASS: Methods/fields: camelCase
+// ✅ Methods/fields: camelCase
 private final MarketRepository marketRepository;
 public Market findBySlug(String slug) {}
 
-// PASS: Constants: UPPER_SNAKE_CASE
+// ✅ Constants: UPPER_SNAKE_CASE
 private static final int MAX_PAGE_SIZE = 100;
 ```
 
 ## Immutability
 
 ```java
-// PASS: Favor records and final fields
+// ✅ Favor records and final fields
 public record MarketDto(Long id, String name, MarketStatus status) {}
 
 public class Market {
@@ -54,10 +54,10 @@ public class Market {
 ## Optional Usage
 
 ```java
-// PASS: Return Optional from find* methods
+// ✅ Return Optional from find* methods
 Optional<Market> market = marketRepository.findBySlug(slug);
 
-// PASS: Map/flatMap instead of get()
+// ✅ Map/flatMap instead of get()
 return market
     .map(MarketResponse::from)
     .orElseThrow(() -> new EntityNotFoundException("Market not found"));
@@ -66,13 +66,13 @@ return market
 ## Streams Best Practices
 
 ```java
-// PASS: Use streams for transformations, keep pipelines short
+// ✅ Use streams for transformations, keep pipelines short
 List<String> names = markets.stream()
     .map(Market::name)
     .filter(Objects::nonNull)
     .toList();
 
-// FAIL: Avoid complex nested streams; prefer loops for clarity
+// ❌ Avoid complex nested streams; prefer loops for clarity
 ```
 
 ## Exceptions
