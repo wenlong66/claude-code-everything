@@ -37,13 +37,17 @@ categories/          按分类整理后的可复制目录
   social-ai/         社交 AI（自定义）
     skills/
     agents/
+  autonomous/        自主/自动化（自定义）
+    skills/
+    commands/
+  software/          软件工程通用（自定义）
+    skills/
+    agents/
   other/             其他技能
     skills/
     agents/
     commands/
-skills/              扩展技能库（原始来源）
-agents/              扩展代理库（原始来源）
-commands/            扩展命令库（原始来源）
+scripts/             脚本与工具
 rules/               规则层（common + language）
 zh-CN/               中文镜像与说明
 hooks/               hooks 示例与配置
@@ -64,7 +68,7 @@ mcp-configs/         MCP 配置示例
 
 - **核心能力**：优先从 `core/` 复制到目标环境（稳定、通用）。
 - **分类复制**：从 `categories/<分类>/skills|agents|commands`（或 `categories/<分类>/<子类>/skills|agents|commands`）直接复制。
-- **原始来源**：`skills/agents/commands` 保留为原始库，便于溯源。
+- **原始来源**：已移除根目录 `skills/agents/commands`，以 `categories/` 为准。
 - **自定义分类**：如 `categories/continuous-learning/`（`skill/` + `commands/`）、`categories/social-ai/`（`skills/` + `agents/`）。
 
 ## 示例场景
