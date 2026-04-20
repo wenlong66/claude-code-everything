@@ -1,0 +1,38 @@
+{
+  "name": "categories-software",
+  "version": "1.10.0",
+  "author": {
+    "name": "wenlong"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": "software",
+  "agents": [
+    "./agents/architect.md",
+    "./agents/build-error-resolver.md",
+    "./agents/code-reviewer.md",
+    "./agents/database-reviewer.md",
+    "./agents/e2e-runner.md",
+    "./agents/security-reviewer.md",
+    "./agents/tdd-guide.md"
+  ],
+  "skills": [
+    "./skills/ai-regression-testing",
+    "./skills/api-design",
+    "./skills/backend-patterns",
+    "./skills/coding-standards",
+    "./skills/database-migrations",
+    "./skills/e2e-testing",
+    "./skills/frontend-patterns",
+    "./skills/nextjs-turbopack",
+    "./skills/postgres-patterns",
+    "./skills/project-guidelines-example",
+    "./skills/security-review",
+    "./skills/tdd-workflow"
+  ],
+  "commands": [
+    "./commands/e2e.md",
+    "./commands/orchestrate.md",
+    "./commands/tdd.md"
+  ]
+}

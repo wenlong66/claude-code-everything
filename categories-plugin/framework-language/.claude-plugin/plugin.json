@@ -1,0 +1,52 @@
+{
+  "name": "categories-framework-language",
+  "version": "1.10.0",
+  "author": {
+    "name": "wenlong"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": "framework-language",
+  "agents": [
+    "./cpp/agents/cpp-build-resolver.md",
+    "./flutter/agents/flutter-reviewer.md",
+    "./go/agents/go-build-resolver.md",
+    "./go/agents/go-reviewer.md",
+    "./python/agents/python-reviewer.md",
+    "./python/agents/pytorch-build-resolver.md",
+    "./springboot/agents/java-build-resolver.md",
+    "./ts-js/agents/build-error-resolver.md"
+  ],
+  "skills": [
+    "./cpp/skills/cpp-coding-standards",
+    "./cpp/skills/cpp-testing",
+    "./django/skills/django-patterns",
+    "./django/skills/django-security",
+    "./django/skills/django-tdd",
+    "./django/skills/django-verification",
+    "./docker/skills/deployment-patterns",
+    "./docker/skills/docker-patterns",
+    "./flutter/skills/flutter-dart-code-review",
+    "./go/skills/golang-patterns",
+    "./go/skills/golang-testing",
+    "./python/skills/python-patterns",
+    "./python/skills/python-testing",
+    "./python/skills/pytorch-patterns",
+    "./springboot/skills/java-coding-standards",
+    "./springboot/skills/jpa-patterns",
+    "./springboot/skills/springboot-patterns",
+    "./springboot/skills/springboot-security",
+    "./springboot/skills/springboot-tdd",
+    "./springboot/skills/springboot-verification",
+    "./ts-js/skills/coding-standards"
+  ],
+  "commands": [
+    "./cpp/commands/cpp-build.md",
+    "./cpp/commands/cpp-review.md",
+    "./cpp/commands/cpp-test.md",
+    "./go/commands/go-build.md",
+    "./go/commands/go-review.md",
+    "./go/commands/go-test.md",
+    "./python/commands/python-review.md"
+  ]
+}
