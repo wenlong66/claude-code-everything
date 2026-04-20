@@ -9,7 +9,7 @@ core/                核心基座（默认基础能力）
   skills/            核心技能
   agents/            核心代理
   commands/          核心命令
-categories/          按分类整理后的可复制目录
+categories/          按分类整理后的可复制目录（按内容分组）
   framework-language/
     ts-js/           TypeScript/JavaScript
     python/
@@ -20,33 +20,18 @@ categories/          按分类整理后的可复制目录
     django/
     springboot/
   business-content/  业务/内容
-    skills/
-    agents/
-    commands/
   research-api/      研究/检索/API
-    skills/
-    agents/
-    commands/
   media-ai/          媒体/AI
-    skills/
-    agents/
-    commands/
   continuous-learning/  持续学习（自定义）
-    skill/
-    commands/
   social-ai/         社交 AI（自定义）
-    skills/
-    agents/
   autonomous/        自主/自动化（自定义）
-    skills/
-    commands/
   software/          软件工程通用（自定义）
-    skills/
-    agents/
   other/             其他技能
-    skills/
-    agents/
-    commands/
+categories-plugin/   按分类可直接安装的插件目录
+  <category>/
+    .claude-plugin/
+      plugin.json
+      marketplace.json
 scripts/             脚本与工具
 rules/               规则层（common + language）
 zh-CN/               中文镜像与说明
@@ -67,8 +52,9 @@ mcp-configs/         MCP 配置示例
 ## 分类使用方式
 
 - **核心能力**：优先从 `core/` 复制到目标环境（稳定、通用）。
-- **分类复制**：从 `categories/<分类>/skills|agents|commands`（或 `categories/<分类>/<子类>/skills|agents|commands`）直接复制。
-- **原始来源**：已移除根目录 `skills/agents/commands`，以 `categories/` 为准。
+- **分类复制**：从 `categories/<分类>/...`（或 `categories/<分类>/<子类>/...`）按需复制 skills/agents/commands。
+- **插件安装方式**：使用 `categories-plugin/<分类>/.claude-plugin/plugin.json` + `marketplace.json` 直接按分类安装。
+- **原始来源**：已移除根目录 `skills/agents/commands`，以 `categories/` 与 `categories-plugin/` 为准。
 - **自定义分类**：如 `categories/continuous-learning/`（`skill/` + `commands/`）、`categories/social-ai/`（`skills/` + `agents/`）。
 
 ## 示例场景
@@ -77,16 +63,18 @@ mcp-configs/         MCP 配置示例
 - 复制：
   - `categories/framework-language/ts-js/skills|agents|commands`
   - `categories/framework-language/flutter/skills|agents|commands`
-- 视需求叠加：`categories/workflow-quality/skills|agents|commands`
+- 或直接安装：
+  - `categories-plugin/framework-language/.claude-plugin`
+  - 可叠加 `categories-plugin/software/.claude-plugin`
 
 ### 场景 2：Python 作为服务端
 - 复制：`categories/framework-language/python/skills|agents|commands`
 - 可叠加：`categories/framework-language/django/skills/`
-- 视需求叠加：`categories/workflow-quality/skills|agents|commands`
+- 视需求叠加：`categories-plugin/software/.claude-plugin`
 
 ### 场景 3：Go 作为服务端
 - 复制：`categories/framework-language/go/skills|agents|commands`
-- 视需求叠加：`categories/workflow-quality/skills|agents|commands`
+- 视需求叠加：`categories-plugin/software/.claude-plugin`
 
 ## 设计目标
 
