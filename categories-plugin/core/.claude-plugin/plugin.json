@@ -1,0 +1,63 @@
+{
+  "name": "core",
+  "version": "1.10.0",
+  "author": {
+    "name": "wenlong"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": "core",
+  "agents": [
+    "./agents/build-error-resolver.md",
+    "./agents/doc-updater.md",
+    "./agents/docs-lookup.md",
+    "./agents/harness-optimizer.md",
+    "./agents/loop-operator.md",
+    "./agents/planner.md",
+    "./agents/refactor-cleaner.md",
+    "./agents/tdd-guide.md"
+  ],
+  "skills": [
+    "./skills/agent-harness-construction",
+    "./skills/agentic-engineering",
+    "./skills/ai-first-engineering",
+    "./skills/blueprint",
+    "./skills/bun-runtime",
+    "./skills/codebase-onboarding",
+    "./skills/context-budget",
+    "./skills/cost-aware-llm-pipeline",
+    "./skills/documentation-lookup",
+    "./skills/nutrient-document-processing",
+    "./skills/prompt-optimizer",
+    "./skills/regex-vs-llm-structured-text",
+    "./skills/search-first",
+    "./skills/skill-stocktake",
+    "./skills/strategic-compact",
+    "./skills/tdd-workflow",
+    "./skills/verification-loop"
+  ],
+  "commands": [
+    "./commands/app-plan.md",
+    "./commands/aside.md",
+    "./commands/build-fix.md",
+    "./commands/checkpoint.md",
+    "./commands/code-review.md",
+    "./commands/context-budget.md",
+    "./commands/docs.md",
+    "./commands/gradle-build.md",
+    "./commands/harness-audit.md",
+    "./commands/model-route.md",
+    "./commands/pm2.md",
+    "./commands/prompt-optimize.md",
+    "./commands/quality-gate.md",
+    "./commands/refactor-clean.md",
+    "./commands/resume-session.md",
+    "./commands/save-session.md",
+    "./commands/sessions.md",
+    "./commands/setup-pm.md",
+    "./commands/test-coverage.md",
+    "./commands/update-codemaps.md",
+    "./commands/update-docs.md",
+    "./commands/verify.md"
+  ]
+}

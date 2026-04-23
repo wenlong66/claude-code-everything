@@ -1,0 +1,23 @@
+{
+  "name": "categories-autonomous",
+  "version": "1.10.0",
+  "author": {
+    "name": "wenlong"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": "autonomous",
+  "agents": [],
+  "skills": [
+    "./skills/autonomous-agent-harness",
+    "./skills/autonomous-loops",
+    "./skills/continuous-agent-loop",
+    "./skills/eval-harness",
+    "./skills/nanoclaw-repl",
+    "./skills/plankton-code-quality",
+    "./skills/ralphinho-rfc-pipeline"
+  ],
+  "commands": [
+    "./commands/quality-gate.md"
+  ]
+}

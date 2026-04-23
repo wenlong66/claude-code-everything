@@ -1,0 +1,31 @@
+{
+  "name": "categories-continuous-learning",
+  "version": "1.10.0",
+  "author": {
+    "name": "wenlong"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": "continuous-learning",
+  "agents": [
+    "./skill/continuous-learning-v2/agents/observer.md"
+  ],
+  "skills": [
+    "./skill/continuous-learning",
+    "./skill/continuous-learning-v2",
+    "./skill/iterative-retrieval"
+  ],
+  "commands": [
+    "./commands/evolve.md",
+    "./commands/instinct-export.md",
+    "./commands/instinct-import.md",
+    "./commands/instinct-status.md",
+    "./commands/learn-eval.md",
+    "./commands/learn.md",
+    "./commands/projects.md",
+    "./commands/promote.md",
+    "./commands/prune.md",
+    "./commands/skill-create.md",
+    "./commands/skill-health.md"
+  ]
+}

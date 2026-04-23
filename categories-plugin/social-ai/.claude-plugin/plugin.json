@@ -1,0 +1,19 @@
+{
+  "name": "categories-social-ai",
+  "version": "1.10.0",
+  "author": {
+    "name": "wenlong"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": "social-ai",
+  "agents": [
+    "./agents/chief-of-staff.md"
+  ],
+  "skills": [
+    "./skills/content-engine",
+    "./skills/crosspost",
+    "./skills/x-api"
+  ],
+  "commands": []
+}
