@@ -8,12 +8,11 @@
   "keywords": [],
   "description": "continuous-learning",
   "agents": [
-    "./skill/continuous-learning-v2/agents/observer.md"
+    "./skills/continuous-learning-v2/agents/observer.md"
   ],
   "skills": [
-    "./skill/continuous-learning",
-    "./skill/continuous-learning-v2",
-    "./skill/iterative-retrieval"
+    "./skills/continuous-learning",
+    "./skills/continuous-learning-v2"
   ],
   "commands": [
     "./commands/evolve.md",
@@ -25,7 +24,6 @@
     "./commands/projects.md",
     "./commands/promote.md",
     "./commands/prune.md",
-    "./commands/skill-create.md",
-    "./commands/skill-health.md"
+    "./commands/skill-create.md"
   ]
 }

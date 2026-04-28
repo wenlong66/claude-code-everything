@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(git fetch *)",
-      "Bash(git merge *)"
+      "Bash(git merge *)",
+      "Bash(python -)",
+      "Bash(node -e \"const fs=require\\('fs'\\);const p='h:/work_ai/claude-code-everything/categories-plugin/software/.claude-plugin/plugin.json';const root='h:/work_ai/claude-code-everything/skills';const j=JSON.parse\\(fs.readFileSync\\(p,'utf8'\\)\\);const s=j.skills.map\\(x=>x.split\\('/'\\).pop\\(\\)\\);const dupInSoftware=s.filter\\(\\(v,i,a\\)=>a.indexOf\\(v\\)!==i\\);const rootSet=new Set\\(fs.readdirSync\\(root,{withFileTypes:true}\\).filter\\(d=>d.isDirectory\\(\\)\\).map\\(d=>d.name\\)\\);const overlap=s.filter\\(n=>rootSet.has\\(n\\)\\);console.log\\(JSON.stringify\\({softwareCount:s.length,dupInSoftware,overlapCount:overlap.length,overlap},null,2\\)\\);\")",
+      "Bash(node -e \"const fs=require\\('fs'\\);const path=require\\('path'\\);const base='h:/work_ai/claude-code-everything/categories-plugin/software/skills';const dirs=fs.readdirSync\\(base,{withFileTypes:true}\\).filter\\(d=>d.isDirectory\\(\\)\\).map\\(d=>d.name\\);for\\(const d of dirs\\){const f=path.join\\(base,d,'SKILL.md'\\);const txt=fs.readFileSync\\(f,'utf8'\\);const lines=txt.split\\(/\\\\r?\\\\n/\\);const title=\\(lines.find\\(l=>l.startsWith\\('# '\\)\\)||''\\).replace\\('# ',''\\);const whenIdx=lines.findIndex\\(l=>/^##\\\\s+When to Use/i.test\\(l\\)\\);let when='';if\\(whenIdx>=0\\){for\\(let i=whenIdx+1;i<Math.min\\(lines.length,whenIdx+12\\);i++\\){if\\(lines[i].startsWith\\('## '\\)\\)break;if\\(lines[i].trim\\(\\)\\) when+=lines[i].trim\\(\\)+' ';}}console.log\\('---'+d+'---'\\);console.log\\('TITLE:',title\\);console.log\\('WHEN:',when.trim\\(\\).slice\\(0,240\\)\\);} \")"
     ]
   }
 }
