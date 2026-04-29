@@ -1,12 +1,12 @@
 ---
 name: deep-research
-description: 使用firecrawl和exa MCPs进行多源深度研究。搜索网络、综合发现并交付带有来源引用的报告。适用于用户希望对任何主题进行有证据和引用的彻底研究时。
+description: 使用 fetch MCP 进行多源深度研究。抓取网页全文、综合发现并交付带有来源引用的报告。适用于用户希望对任何主题进行有证据和引用的彻底研究时。
 origin: ECC
 ---
 
 # 深度研究
 
-使用 firecrawl 和 exa MCP 工具，从多个网络来源生成详尽且有引用的研究报告。
+使用 fetch MCP 工具，从多个网络来源生成详尽且有引用的研究报告。
 
 ## 何时激活
 
@@ -18,12 +18,11 @@ origin: ECC
 
 ## MCP 要求
 
-至少需要以下之一：
+至少需要以下工具：
 
-* **firecrawl** — `firecrawl_search`, `firecrawl_scrape`, `firecrawl_crawl`
-* **exa** — `web_search_exa`, `web_search_advanced_exa`, `crawling_exa`
+* **fetch** — `fetch(url, max_length, start_index, raw)`
 
-两者结合可提供最佳覆盖范围。在 `~/.claude.json` 或 `~/.codex/config.toml` 中配置。
+建议同时具备可用的搜索能力（如 Claude Code 内置 WebSearch 或用户提供 URL 列表），以便先发现候选来源，再用 fetch 抓取正文。
 
 ## 工作流程
 
@@ -47,47 +46,38 @@ origin: ECC
   * 哪些公司在该领域处于领先地位？
   * 市场规模和增长轨迹如何？
 
-### 步骤 3：执行多源搜索
+### 步骤 3：收集候选来源
 
-对**每个**子问题，使用可用的 MCP 工具进行搜索：
+对**每个**子问题，先收集候选 URL（目标总计 15-30 个独特来源）：
 
-**使用 firecrawl：**
-
-```
-firecrawl_search(query: "<sub-question keywords>", limit: 8)
-```
-
-**使用 exa：**
-
-```
-web_search_exa(query: "<子问题关键词>", numResults: 8)
-web_search_advanced_exa(query: "<关键词>", numResults: 5, startPublishedDate: "2025-01-01")
-```
-
-**搜索策略：**
-
-* 每个子问题使用 2-3 个不同的关键词变体
-* 混合使用通用查询和新闻聚焦查询
-* 目标总共获取 15-30 个独特的来源
+* 优先使用可用搜索能力检索候选页面
+* 若无搜索能力，向用户请求 5-10 个种子 URL 再扩展
+* 每个子问题使用 2-3 个不同关键词变体
+* 混合通用查询与新闻/时效性查询
 * 优先级：学术、官方、知名新闻 > 博客 > 论坛
 
-### 步骤 4：深度阅读关键来源
+### 步骤 4：使用 fetch 深度阅读关键来源
 
-对于最有希望的 URL，获取完整内容：
+对候选 URL 抓取全文：
 
-**使用 firecrawl：**
-
-```
-firecrawl_scrape(url: "<url>")
+```text
+fetch(url: "<url>")
 ```
 
-**使用 exa：**
+页面较长时分段抓取：
 
-```
-crawling_exa(url: "<url>", tokensNum: 5000)
+```text
+fetch(url: "<url>", max_length: 20000)
+fetch(url: "<url>", start_index: 20000, max_length: 20000)
 ```
 
-完整阅读 3-5 个关键来源以获得深度信息。不要仅依赖搜索片段。
+必要时获取原始 HTML：
+
+```text
+fetch(url: "<url>", raw: true)
+```
+
+完整阅读 3-5 个关键来源以获得深度信息。不要仅依赖搜索摘要。
 
 ### 步骤 5：综合并撰写报告
 
@@ -121,7 +111,7 @@ crawling_exa(url: "<url>", tokensNum: 5000)
 2. ...
 
 ## 方法论
-搜索了网络和新闻中的 [N] 个查询。分析了 [M] 个来源。
+共检索并筛选 [N] 个候选页面，抓取并分析 [M] 个来源全文。
 调查的子问题：[列表]
 ```
 
@@ -132,16 +122,16 @@ crawling_exa(url: "<url>", tokensNum: 5000)
 
 ## 使用子代理进行并行研究
 
-对于广泛的主题，使用 Claude Code 的 Task 工具进行并行处理：
+对于广泛主题，使用 Claude Code 的 Task 工具并行处理：
 
-```
+```text
 并行启动3个研究代理：
-1. 代理1：研究子问题1-2
-2. 代理2：研究子问题3-4
-3. 代理3：研究子问题5 + 交叉主题
+1. 代理1：研究子问题1-2（收集URL + fetch抓取）
+2. 代理2：研究子问题3-4（收集URL + fetch抓取）
+3. 代理3：研究子问题5 + 交叉主题（收集URL + fetch抓取）
 ```
 
-每个代理负责搜索、阅读来源并返回发现结果。主会话将其综合成最终报告。
+每个代理负责收集候选来源、抓取内容并返回发现结果。主会话将其综合成最终报告。
 
 ## 质量规则
 
@@ -154,7 +144,7 @@ crawling_exa(url: "<url>", tokensNum: 5000)
 
 ## 示例
 
-```
+```text
 "研究核聚变能源的当前现状"
 "深入探讨 2026 年 Rust 与 Go 在后端服务中的对比"
 "研究自举 SaaS 业务的最佳策略"
