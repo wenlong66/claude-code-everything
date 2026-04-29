@@ -6,13 +6,5 @@
   },
   "license": "MIT",
   "keywords": [],
-  "description": "media-ai",
-  "agents": [],
-  "skills": [
-    "./skills/content-engine",
-    "./skills/fal-ai-media",
-    "./skills/video-editing",
-    "./skills/videodb"
-  ],
-  "commands": []
+  "description": "media-ai"
 }
