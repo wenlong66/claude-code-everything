@@ -1,0 +1,132 @@
+{
+  "skill_name": "gpt-image2-image",
+  "purpose": "Trigger evaluation set for a general-purpose image generation skill. Mixes should-trigger and should-not-trigger prompts, especially near misses such as image editing, screenshot analysis, and implementation questions.",
+  "evals": [
+    {
+      "id": 1,
+      "should_trigger": true,
+      "prompt": "给我的 AI 编程训练营做一张官网头图，深色背景，画面里要有发光代码流、几个人在协作、科技感但别太廉价，先帮我整理 prompt 再出一张 16:9 的图。",
+      "expected_output": "Should trigger the image generation skill for a new hero image request with explicit generation intent.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "should_trigger": true,
+      "prompt": "我想生一张小红书封面，主题是‘30天学会 Claude Code’，要高级一点，不要那种培训班海报味，标题字可以留位置但先别真的排字，你帮我定风格。",
+      "expected_output": "Should trigger because the user wants a brand new generated image and asks the assistant to choose style direction.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "should_trigger": true,
+      "prompt": "帮我画一个 app onboarding 插画：一个人在夜里对着笔记本和 AI 助手一起工作，温暖、安静、偏 editorial 插画风，手机竖版，用来做启动页。",
+      "expected_output": "Should trigger for illustration generation with clear use case and vertical format.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "should_trigger": true,
+      "prompt": "能不能基于我现在这套品牌气质，做一张新的活动主视觉？不是改现有图，是重新生成一张。关键词：蓝绿渐变、玻璃质感、未来感、留白多一点。",
+      "expected_output": "Should trigger because the user explicitly wants a newly generated visual rather than editing an existing image.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "should_trigger": true,
+      "prompt": "出一张商品图，主体是银色保温杯，纯净白底，轻微倒影，像电商详情页首图那种，方图就行，越干净越好。",
+      "expected_output": "Should trigger for a newly generated product hero image.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "should_trigger": true,
+      "prompt": "我在做桌游设定，想要一张‘漂浮在云海上的图书馆城市’概念图，电影感一点，别太二次元，先帮我把 prompt 写专业，再生成。",
+      "expected_output": "Should trigger because the user asks for prompt refinement plus image generation for concept art.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "should_trigger": true,
+      "prompt": "画个头像给我论坛用，不要真人照，想要一种冷静理性的 AI 研究者形象，极简、几何、深蓝灰色系，如果尺寸没说你就提醒我选。",
+      "expected_output": "Should trigger for avatar generation and includes the size-selection behavior.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "should_trigger": true,
+      "prompt": "帮我做一张 9:16 手机壁纸，主题是‘凌晨两点还亮着的代码编辑器’，氛围要孤独但漂亮，别出现任何真实品牌 logo。",
+      "expected_output": "Should trigger for wallpaper generation with explicit negative constraints.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "should_trigger": true,
+      "prompt": "我想给播客做一张封面图，但我只有一句话：‘和 AI 一起工作的普通人’。你先把我这个模糊想法变成完整 prompt，然后看需要的话让我选 1:1 还是别的比例。",
+      "expected_output": "Should trigger because the user relies on the skill to expand a vague idea into a full generation prompt.",
+      "files": []
+    },
+    {
+      "id": 10,
+      "should_trigger": false,
+      "prompt": "我上传了一张现成海报，帮我把上面的标题从‘AI Workshop’改成‘Claude Code Camp’，其他元素别动。",
+      "expected_output": "Should not trigger because this is image editing on an existing image, not new image generation.",
+      "files": []
+    },
+    {
+      "id": 11,
+      "should_trigger": false,
+      "prompt": "看下我这张截图里为什么 VS Code 的终端报错，把红字报错信息提出来顺便解释一下。",
+      "expected_output": "Should not trigger because this is screenshot analysis / OCR-style interpretation, not image generation.",
+      "files": []
+    },
+    {
+      "id": 12,
+      "should_trigger": false,
+      "prompt": "这张产品图能帮我抠图吗？我要把背景从办公室换成纯白，然后阴影保留自然一点。",
+      "expected_output": "Should not trigger because the request is image editing/background removal.",
+      "files": []
+    },
+    {
+      "id": 13,
+      "should_trigger": false,
+      "prompt": "请写一个 Python 脚本，调用 OpenAI 的 gpt-image-2 API 批量生成 20 张 16:9 的图片并保存到 outputs 目录。",
+      "expected_output": "Should not trigger because the user wants implementation help for code, not the image itself.",
+      "files": []
+    },
+    {
+      "id": 14,
+      "should_trigger": false,
+      "prompt": "我有一张 UI 截图，帮我分析一下这个页面的信息层级和视觉问题，再给我改进建议。",
+      "expected_output": "Should not trigger because this is UI critique of an existing screenshot, not generating a new image asset.",
+      "files": []
+    },
+    {
+      "id": 15,
+      "should_trigger": false,
+      "prompt": "把这张参考图放大到 4K，尽量保持细节，不要改风格。",
+      "expected_output": "Should not trigger because this is upscaling/enhancement of an existing image.",
+      "files": []
+    },
+    {
+      "id": 16,
+      "should_trigger": false,
+      "prompt": "我需要一个 SVG 格式的极简 logo，请直接给我可编辑的矢量代码，不要位图。",
+      "expected_output": "Should not trigger because the primary deliverable is vector code/asset authoring rather than bitmap image generation.",
+      "files": []
+    },
+    {
+      "id": 17,
+      "should_trigger": false,
+      "prompt": "这张角色图我挺喜欢，帮我总结一下它的配色、光影和构图套路，我想拿去写设计规范。",
+      "expected_output": "Should not trigger because the user wants image analysis and summarization, not generation.",
+      "files": []
+    },
+    {
+      "id": 18,
+      "should_trigger": false,
+      "prompt": "我在做一个图片生成网站，帮我设计前端交互和后端接口，支持用户输入 prompt、选择比例、再调用 gpt-image-2。",
+      "expected_output": "Should not trigger because this is product/engineering design work around image generation, not using the skill to generate an image now.",
+      "files": []
+    }
+  ]
+}

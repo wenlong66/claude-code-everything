@@ -1,0 +1,23 @@
+{
+  "name": "claude-code-categories",
+  "owner": {
+    "name": "wenlong"
+  },
+  "metadata": {
+    "description": "custom"
+  },
+  "plugins": [
+    {
+      "name": "custom",
+      "source": "./",
+      "description": "custom",
+      "version": "1.10.0",
+      "author": {
+        "name": "wenlong"
+      },
+      "license": "MIT",
+      "keywords": [],
+      "strict": false
+    }
+  ]
+}
