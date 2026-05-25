@@ -1,0 +1,36 @@
+{
+  "name": "categories-superpowers-ext",
+  "version": "1.10.0",
+  "description": "standalone engineering plugin complementary to claude-code-superpowers",
+  "author": {
+    "name": "wenlong"
+  },
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "skills",
+    "frontend",
+    "backend",
+    "database",
+    "security",
+    "browser-qa"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Superpowers Ext",
+    "shortDescription": "Engineering skills for frontend, backend, database, security, and browser QA.",
+    "longDescription": "Superpowers Ext is a Codex-ready skills plugin focused on concrete software engineering execution: frontend and backend patterns, Postgres and migrations, browser QA, deployment, documentation lookup, security review, and design quality guidance.",
+    "developerName": "wenlong",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Review this code for security issues.",
+      "Help me verify this deploy in a browser.",
+      "Show me the right Postgres pattern for this schema change."
+    ]
+  }
+}

@@ -12,7 +12,14 @@
       "mcp__filesystem__create_directory",
       "Bash(NO_PROXY='*' no_proxy='*' HTTP_PROXY='' HTTPS_PROXY='' ALL_PROXY='' http_proxy='' https_proxy='' all_proxy='' python \"h:/work_ai/claude-code-everything/categories-plugin/custom/skills/gpt-image-game/scripts/generate_images.py\" --prompt * --game-type ui --transparent --design-size 1920x1080 --slice-mode alpha-components --slice-alpha-threshold 8 --slice-min-width 16 --slice-min-height 16 --slice-min-area 256 --slice-padding 4 --count 1 --output-dir \"h:/work_ai/claude-code-everything/categories-plugin/custom/skills/gpt-image-game/outputs/test-ui-sliced\")",
       "mcp__context7__resolve-library-id",
-      "mcp__context7__query-docs"
-    ]
+      "mcp__context7__query-docs",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(git -C \"/e/work/claude-code-everything\" status --short)"
+    ],
+    "defaultMode": "auto"
+  },
+  "enabledPlugins": {
+    "superpowers@superpowers-dev": true
   }
 }

@@ -1,0 +1,23 @@
+{
+  "name": "claude-code-categories",
+  "owner": {
+    "name": "wenlong"
+  },
+  "metadata": {
+    "description": "standalone engineering plugin complementary to superpowers"
+  },
+  "plugins": [
+    {
+      "name": "categories-superpowers-ext",
+      "source": "./",
+      "description": "standalone engineering plugin complementary to superpowers",
+      "version": "1.10.0",
+      "author": {
+        "name": "wenlong"
+      },
+      "license": "MIT",
+      "keywords": [],
+      "strict": false
+    }
+  ]
+}
