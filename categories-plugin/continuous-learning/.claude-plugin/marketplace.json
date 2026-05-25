@@ -1,5 +1,5 @@
 {
-  "name": "claude-code-categories",
+  "name": "categories-continuous-learning",
   "owner": {
     "name": "wenlong"
   },
@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "categories-continuous-learning",
+      "name": "continuous-learning",
       "source": "./",
       "description": "continuous-learning",
       "version": "1.10.0",

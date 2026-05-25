@@ -1,5 +1,5 @@
 {
-  "name": "claude-code-categories",
+  "name": "categories-superpowers-ext",
   "owner": {
     "name": "wenlong"
   },
@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "categories-superpowers-ext",
+      "name": "superpowers-ext",
       "source": "./",
       "description": "standalone engineering plugin complementary to superpowers",
       "version": "1.10.0",

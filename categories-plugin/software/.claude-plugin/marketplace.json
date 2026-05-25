@@ -1,5 +1,5 @@
 {
-  "name": "claude-code-categories",
+  "name": "categories-software",
   "owner": {
     "name": "wenlong"
   },
@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "categories-software",
+      "name": "software",
       "source": "./",
       "description": "software",
       "version": "1.10.0",
