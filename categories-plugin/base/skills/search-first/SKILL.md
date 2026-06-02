@@ -52,8 +52,18 @@ Use this skill when:
 |--------|--------|
 | Exact match, well-maintained, MIT/Apache | **Adopt** — install and use directly |
 | Partial match, good foundation | **Extend** — install + write thin wrapper |
-| Multiple weak matches | **Compose** — combine 2-3 small packages |
+| Multiple weak package/library matches | **Compose** — combine 2-3 small packages |
+| Multiple Claude Code skills match | **Choose one** — ask the user to pick when the intent is ambiguous; otherwise select the best fit yourself and explain briefly |
 | Nothing suitable found | **Build** — write custom, but informed by research |
+
+## Skill Selection Rule
+
+When searching Claude Code skills, do not invoke every skill that could apply. If several skills appear relevant, compare their fit and continue with exactly one:
+
+- Ask the user to choose when the skills imply different workflows or deliverables.
+- Choose the strongest match yourself when one skill clearly covers the user's primary goal.
+- Mention the runner-up only if it changes the tradeoff or explains why it was not selected.
+- Use multiple skills only when the user explicitly asks for a combined workflow, or when the skills are sequential and non-overlapping.
 
 ## How to Use
 
@@ -64,7 +74,7 @@ Before writing a utility or adding functionality, mentally run through:
 0. Does this already exist in the repo? → `rg` through relevant modules/tests first
 1. Is this a common problem? → Search npm/PyPI
 2. Is there an MCP for this? → Check `~/.claude/settings.json` and search
-3. Is there a skill for this? → Check `~/.claude/skills/`
+3. Is there a skill for this? → Check `~/.claude/skills/`, then select exactly one matching skill before invoking it
 4. Is there a GitHub implementation/template? → Run GitHub code search for maintained OSS before writing net-new code
 
 ### Full Mode (agent)
@@ -78,6 +88,7 @@ Task(subagent_type="general-purpose", prompt="
   Constraints: [ANY]
 
   Search: npm/PyPI, MCP servers, Claude Code skills, GitHub
+  If multiple Claude Code skills match: recommend exactly one, or ask for a user choice when ambiguous
   Return: Structured comparison with recommendation
 ")
 ```

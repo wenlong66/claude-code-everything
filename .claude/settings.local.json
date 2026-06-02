@@ -4,22 +4,12 @@
       "Bash(git fetch *)",
       "Bash(git merge *)",
       "Bash(python -)",
-      "Bash(node -e \"const fs=require\\('fs'\\);const p='h:/work_ai/claude-code-everything/categories-plugin/software/.claude-plugin/plugin.json';const root='h:/work_ai/claude-code-everything/skills';const j=JSON.parse\\(fs.readFileSync\\(p,'utf8'\\)\\);const s=j.skills.map\\(x=>x.split\\('/'\\).pop\\(\\)\\);const dupInSoftware=s.filter\\(\\(v,i,a\\)=>a.indexOf\\(v\\)!==i\\);const rootSet=new Set\\(fs.readdirSync\\(root,{withFileTypes:true}\\).filter\\(d=>d.isDirectory\\(\\)\\).map\\(d=>d.name\\)\\);const overlap=s.filter\\(n=>rootSet.has\\(n\\)\\);console.log\\(JSON.stringify\\({softwareCount:s.length,dupInSoftware,overlapCount:overlap.length,overlap},null,2\\)\\);\")",
-      "Bash(node -e \"const fs=require\\('fs'\\);const path=require\\('path'\\);const base='h:/work_ai/claude-code-everything/categories-plugin/software/skills';const dirs=fs.readdirSync\\(base,{withFileTypes:true}\\).filter\\(d=>d.isDirectory\\(\\)\\).map\\(d=>d.name\\);for\\(const d of dirs\\){const f=path.join\\(base,d,'SKILL.md'\\);const txt=fs.readFileSync\\(f,'utf8'\\);const lines=txt.split\\(/\\\\r?\\\\n/\\);const title=\\(lines.find\\(l=>l.startsWith\\('# '\\)\\)||''\\).replace\\('# ',''\\);const whenIdx=lines.findIndex\\(l=>/^##\\\\s+When to Use/i.test\\(l\\)\\);let when='';if\\(whenIdx>=0\\){for\\(let i=whenIdx+1;i<Math.min\\(lines.length,whenIdx+12\\);i++\\){if\\(lines[i].startsWith\\('## '\\)\\)break;if\\(lines[i].trim\\(\\)\\) when+=lines[i].trim\\(\\)+' ';}}console.log\\('---'+d+'---'\\);console.log\\('TITLE:',title\\);console.log\\('WHEN:',when.trim\\(\\).slice\\(0,240\\)\\);} \")",
-      "Bash(node -e \"const fs=require\\('fs'\\);JSON.parse\\(fs.readFileSync\\('e:/work/claude-code-everything/hooks/hooks.json','utf8'\\)\\);console.log\\('ok'\\)\")",
-      "Bash(node -e 'const fs=require\\(\"fs\"\\);const path=require\\(\"path\"\\);const root=\"e:/work/claude-code-everything\";const srcPath=path.join\\(root,\"hooks\",\"hooks.json\"\\);const src=JSON.parse\\(fs.readFileSync\\(srcPath,\"utf8\"\\)\\);const ensure=\\(p\\)=>fs.mkdirSync\\(p,{recursive:true}\\);const pick=\\(ids\\)=>{const set=new Set\\(ids\\);const out={\"$schema\":src[\"$schema\"],hooks:{}};for\\(const [event,items] of Object.entries\\(src.hooks||{}\\)\\){const filtered=\\(items||[]\\).filter\\(\\(item\\)=>set.has\\(item.id\\)\\);if\\(filtered.length\\)out.hooks[event]=filtered;}return out;};const continuousIds=[\"pre:observe:continuous-learning\",\"post:observe:continuous-learning\",\"post:session-activity-tracker\",\"stop:evaluate-session\",\"stop:cost-tracker\"];const softwareIds=[\"pre:bash:dispatcher\",\"pre:config-protection\",\"pre:edit-write:gateguard-fact-force\",\"pre:mcp-health-check\",\"post:bash:dispatcher\",\"post:quality-gate\",\"post:edit:accumulator\",\"stop:format-typecheck\",\"stop:check-console-log\",\"session:start\"];const clDir=path.join\\(root,\"categories-plugin\",\"continuous-learning\",\"hooks\"\\);const swDir=path.join\\(root,\"categories-plugin\",\"software\",\"hooks\"\\);ensure\\(clDir\\);ensure\\(swDir\\);fs.writeFileSync\\(path.join\\(clDir,\"hooks.json\"\\),JSON.stringify\\(pick\\(continuousIds\\),null,2\\)+\"\\\\n\"\\);fs.writeFileSync\\(path.join\\(swDir,\"hooks.json\"\\),JSON.stringify\\(pick\\(softwareIds\\),null,2\\)+\"\\\\n\"\\);')",
-      "Bash(node -e 'const fs=require\\(\"fs\"\\);JSON.parse\\(fs.readFileSync\\(\"e:/work/claude-code-everything/categories-plugin/continuous-learning/hooks/hooks.json\",\"utf8\"\\)\\);JSON.parse\\(fs.readFileSync\\(\"e:/work/claude-code-everything/categories-plugin/software/hooks/hooks.json\",\"utf8\"\\)\\);console.log\\(\"ok\"\\)')",
       "mcp__filesystem__create_directory",
-      "Bash(NO_PROXY='*' no_proxy='*' HTTP_PROXY='' HTTPS_PROXY='' ALL_PROXY='' http_proxy='' https_proxy='' all_proxy='' python \"h:/work_ai/claude-code-everything/categories-plugin/custom/skills/gpt-image-game/scripts/generate_images.py\" --prompt * --game-type ui --transparent --design-size 1920x1080 --slice-mode alpha-components --slice-alpha-threshold 8 --slice-min-width 16 --slice-min-height 16 --slice-min-area 256 --slice-padding 4 --count 1 --output-dir \"h:/work_ai/claude-code-everything/categories-plugin/custom/skills/gpt-image-game/outputs/test-ui-sliced\")",
       "mcp__context7__resolve-library-id",
-      "mcp__context7__query-docs",
-      "Skill(update-config)",
-      "Skill(update-config:*)",
-      "Bash(git -C \"/e/work/claude-code-everything\" status --short)"
-    ],
-    "defaultMode": "auto"
+      "mcp__context7__query-docs"
+    ]
   },
   "enabledPlugins": {
-    "superpowers@superpowers-dev": true
+    "superpowers@superpowers-dev": false
   }
 }
