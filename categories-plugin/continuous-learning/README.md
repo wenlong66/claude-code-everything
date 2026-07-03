@@ -8,6 +8,11 @@
 - **知识导入导出**：支持 instinct 的导入、导出与状态管理。
 - **技能成长**：支持技能创建与项目维度的持续优化。
 
+## Skills 简要说明
+
+- **continuous-learning**：从 Claude Code 会话中自动提炼可复用模式并沉淀为技能。
+- **continuous-learning-v2**：基于 instinct 的学习系统，可观察会话并逐步演化为技能、命令或代理。
+
 ## 组件清单
 
 ```json

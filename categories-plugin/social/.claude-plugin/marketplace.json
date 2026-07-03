@@ -1,0 +1,23 @@
+{
+  "name": "categories-social",
+  "owner": {
+    "name": "wenlong"
+  },
+  "metadata": {
+    "description": "social"
+  },
+  "plugins": [
+    {
+      "name": "social",
+      "source": "./",
+      "description": "social",
+      "version": "1.10.0",
+      "author": {
+        "name": "wenlong"
+      },
+      "license": "MIT",
+      "keywords": [],
+      "strict": false
+    }
+  ]
+}

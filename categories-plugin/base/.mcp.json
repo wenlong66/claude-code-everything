@@ -2,7 +2,7 @@
   "mcpServers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@2.1.4"]
+      "args": ["-y", "@upstash/context7-mcp@latest"]
     },
     "fetch": {
       "args": [
@@ -13,7 +13,7 @@
     },
     "memory": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory@2026.1.26"]
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
     },
     "filesystem": {
       "args": [
@@ -24,10 +24,6 @@
         "E:/work"
       ],
       "command": "cmd"
-    },
-    "sequential-thinking": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking@2025.12.18"]
     }
   }
 }
